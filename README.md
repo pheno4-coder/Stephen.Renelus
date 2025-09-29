@@ -69,9 +69,9 @@ Mon objectif : devenir **Administrateur Systèmes & Réseaux**, capable de gére
 ---
 
 ## 📎 Annexes
-- [Documentation Wi-Fi GSB](Documentation%20Wi-fi%20GSB.odt)  
-- [GSB Mise en place d'un serveur.pdf  ](https://github.com/pheno4-coder/Stephen.Renelus/blob/main/GSB%20Mise%20en%20place%20d'un%20serveur.pdf)
-- [Salle de formation – DHCP & Wireshark](Salle%20Formation.odt)  
+- [📡 Borne Wifi – Installation et configuration](Borne_Wifi.pdf)  
+- [🏫 Salle de formation – Mise en place DHCP et réseau](Salle%20Formation.pdf)  
+- [🖥️ GSB – Mise en place d’un serveur Web](GSB%20Mise%20en%20place%20d'un%20serveur.pdf)  
 - [Annexes Épreuve E4 – BTS SIO](6-%20Annexes%206%20-%20Epreuve%20E4%20-%20BTS%20SIO%202023.docx)  
 - [Parcours de Certification](Parcours-de-Certification.pptx.pdf)  
 
