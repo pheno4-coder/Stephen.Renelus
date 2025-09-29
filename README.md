@@ -70,7 +70,7 @@ Mon objectif : devenir **Administrateur Systèmes & Réseaux**, capable de gére
 
 ## 📎 Annexes
 - [Documentation Wi-Fi GSB](Documentation%20Wi-fi%20GSB.odt)  
-- [Mise en place d’un serveur](GSB%20Mise%20en%20place%20d'un%20serveur.odt)  
+- [Mise en place d’un serveur] GSB Mise en place d'un serveur.pdf  
 - [Salle de formation – DHCP & Wireshark](Salle%20Formation.odt)  
 - [Annexes Épreuve E4 – BTS SIO](6-%20Annexes%206%20-%20Epreuve%20E4%20-%20BTS%20SIO%202023.docx)  
 - [Parcours de Certification](Parcours-de-Certification.pptx.pdf)  
