@@ -4,88 +4,192 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio – Stephen Renelus</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
   <style>
+    /* variables de couleurs */
+    :root {
+      --primary: #0d1b2a;
+      --secondary: #1b263b;
+      --accent: #e0e1dd;
+      --bg-body: #f0f2f5;
+      --bg-card: #ffffff;
+      --text-main: #222222;
+      --text-muted: #666666;
+      --text-on-dark: #d1d1d1;
+      --shadow: 0 4px 15px rgba(0,0,0,0.08);
+      --shadow-hover: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    /* Reset & Styles de base */
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #f8f9fb;
-      color: #222;
-      line-height: 1.7;
+      background: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.8;
+      font-weight: 400;
     }
+
+    /* Header */
     header {
-      background: #0d1b2a;
+      background: var(--primary);
       color: #fff;
-      padding: 3rem 1rem;
+      padding: 4rem 1rem;
       text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
     header h1 {
-      font-size: 2.4rem;
+      font-size: 2.8rem;
       margin: 0;
       font-family: 'Merriweather', serif;
+      letter-spacing: -1px;
+    }
+    header h1 span[role="img"] {
+      font-size: 2.2rem;
+      margin-right: 10px;
     }
     header p {
-      margin-top: .8rem;
-      font-size: 1.2rem;
-      color: #d1d1d1;
+      margin-top: 1rem;
+      font-size: 1.3rem;
+      color: var(--text-on-dark);
+      font-weight: 500;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
+
+    /* Main Container */
     main {
       max-width: 950px;
       margin: auto;
-      padding: 2rem 1.2rem;
+      padding: 3rem 1.2rem;
     }
+
+    /* Sections / Cartes */
     section {
-      background: #fff;
-      margin-bottom: 2.5rem;
-      padding: 2rem;
-      border-radius: 8px;
-      border-left: 6px solid #1b263b;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: var(--bg-card);
+      margin-bottom: 3rem;
+      padding: 2.5rem;
+      border-radius: 12px;
+      border-left: 8px solid var(--secondary);
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    /* Effet au survol des sections */
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* Titres dans les sections */
     h2 {
       font-family: 'Merriweather', serif;
-      font-size: 1.7rem;
-      color: #1b263b;
+      font-size: 1.9rem;
+      color: var(--secondary);
       margin-top: 0;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #eee;
-      padding-bottom: .5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.7rem;
     }
     h3 {
-      margin-top: 1.2rem;
-      font-size: 1.2rem;
-      color: #0d1b2a;
+      margin-top: 1.8rem;
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
     }
+    h3 small {
+      font-weight: 400;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Listes */
     ul {
-      margin: .5rem 0;
-      padding-left: 1.2rem;
+      margin: 0.5rem 0 1rem 0;
+      padding-left: 1.5rem;
     }
+    ul ul {
+      margin-top: 0.2rem;
+      margin-bottom: 0.5rem;
+    }
+    li {
+      margin-bottom: 0.6rem;
+    }
+
+    /* Liens */
     a {
-      color: #1b263b;
+      color: #3e5c76; /* Bleu légèrement plus vif pour les liens */
       font-weight: 600;
       text-decoration: none;
-      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+      border-bottom: 2px solid transparent;
     }
     a:hover {
-      border-color: #1b263b;
+      color: var(--secondary);
+      border-color: var(--secondary);
+    }
+
+    /* Textes */
+    strong {
+      color: var(--primary);
+      font-weight: 700;
     }
     p {
-      margin: .6rem 0;
+      margin: 0.8rem 0;
     }
+
+    /* Footer */
     footer {
-      background: #0d1b2a;
-      color: #d1d1d1;
+      background: var(--primary);
+      color: var(--text-on-dark);
       text-align: center;
-      padding: 1.5rem;
-      margin-top: 3rem;
-      font-size: .9rem;
+      padding: 2rem;
+      margin-top: auto;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    /* 📱 RESPONSIVE - Adaptations mobiles */
+    @media (max-width: 768px) {
+      header {
+        padding: 3rem 1rem;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      header h1 span[role="img"] {
+        font-size: 1.8rem;
+        display: block; /* Émoji sur sa propre ligne si nécessaire */
+        margin-bottom: 5px;
+        margin-right: 0;
+      }
+      header p {
+        font-size: 1.1rem;
+      }
+      main {
+        padding: 1.5rem 1rem;
+      }
+      section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        border-left-width: 6px;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      h3 {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>💻 Portfolio – BTS SIO SISR</h1>
+  <h1><span role="img" aria-label="ordinateur">💻</span>Portfolio – BTS SIO SISR</h1>
   <p>Stephen Renelus – Étudiant en systèmes, réseaux & cybersécurité</p>
 </header>
 
@@ -97,7 +201,7 @@
   </section>
 
   <section>
-    <h2>🎯 Projet Professionnel</h2>
+    <h2><span role="img" aria-label="cible">🎯</span>Projet Professionnel</h2>
     <ul>
       <li>👨‍💻 Objectif de carrière : <strong>Administrateur Systèmes & Réseaux</strong></li>
       <li>🛠️ Compétences clés :
@@ -118,7 +222,7 @@
   </section>
 
   <section>
-    <h2>📂 Réalisations professionnelles</h2>
+    <h2><span role="img" aria-label="dossier">📂</span>Réalisations professionnelles</h2>
 
     <h3>🔹 <a href="Documentation%20Wi-fi%20GSB.odt">Mise en place d’un réseau Wi-Fi sécurisé (GSB)</a></h3>
     <ul>
@@ -146,7 +250,7 @@
   </section>
 
   <section>
-    <h2>📘 Autoformations & Certifications</h2>
+    <h2><span role="img" aria-label="livre">📘</span>Autoformations & Certifications</h2>
     <ul>
       <li>✅ <em>Initiez-vous à Linux</em> (OpenClassrooms – janv. 2025)</li>
       <li>✅ <em>Administrez un système Linux</em> (OpenClassrooms – janv. 2025)</li>
@@ -158,13 +262,13 @@
   </section>
 
   <section>
-    <h2>📊 Tableau de synthèse</h2>
+    <h2><span role="img" aria-label="tableau">📊</span>Tableau de synthèse</h2>
     <p>📄 <a href="Annexe%206-1%20Tableau.xlsx">Tableau de synthèse – Réalisations professionnelles</a><br>
     <em>(conforme au modèle officiel de l’épreuve E4 – BTS SIO)</em></p>
   </section>
 
   <section>
-    <h2>🌍 Développement professionnel & Veille</h2>
+    <h2><span role="img" aria-label="planète">🌍</span>Développement professionnel & Veille</h2>
     <ul>
       <li>Veille technologique : Cisco, Microsoft, ZDNet, TechTarget</li>
       <li>Expérimentations en labo virtualisé (VMs, sandbox)</li>
@@ -173,7 +277,7 @@
   </section>
 
   <section>
-    <h2>📎 Annexes</h2>
+    <h2><span role="img" aria-label="trombone">📎</span>Annexes</h2>
     <ul>
       <li><a href="Documentation%20Wi-fi%20GSB.odt">Documentation Wi-Fi GSB</a></li>
       <li><a href="GSB%20Mise%20en%20place%20d'un%20serveur.odt">Mise en place d’un serveur</a></li>
@@ -184,10 +288,10 @@
   </section>
 
   <section>
-    <h2>👤 Contact</h2>
-    <p>📧 Email : <em>à ajouter</em></p>
-    <p>🔗 LinkedIn : <em>à ajouter</em></p>
-    <p>💼 GitHub : <a href="https://github.com/ton-profil">Ton profil</a></p>
+    <h2><span role="img" aria-label="silhouette">👤</span>Contact</h2>
+    <p>📧 Email : <em>[Insérer votre email professionnel]</em></p>
+    <p>🔗 LinkedIn : <a href="#">[Insérer lien vers votre profil LinkedIn]</a></p>
+    <p>💼 GitHub : <a href="https://github.com/ton-profil">github.com/ton-profil</a></p>
   </section>
 </main>
 
