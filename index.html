@@ -3,345 +3,518 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio – Stephen Renelus</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <title>Portfolio – Stephen Renelus | SIO SISR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* variables de couleurs */
+    /* VARIABLES DE COULEURS - Thème moderne Tech */
     :root {
-      --primary: #0d1b2a;
-      --secondary: #1b263b;
-      --accent: #e0e1dd;
-      --bg-body: #f0f2f5;
-      --bg-card: #ffffff;
-      --text-main: #222222;
-      --text-muted: #666666;
-      --text-on-dark: #d1d1d1;
-      --shadow: 0 4px 15px rgba(0,0,0,0.08);
-      --shadow-hover: 0 10px 30px rgba(0,0,0,0.12);
+      --primary: #0F172A; /* Slate 900 */
+      --secondary: #3B82F6; /* Blue 500 */
+      --secondary-hover: #2563EB; /* Blue 600 */
+      --bg-body: #F8FAFC; /* Slate 50 */
+      --bg-card: #FFFFFF;
+      --text-main: #334155; /* Slate 700 */
+      --text-heading: #0F172A; /* Slate 900 */
+      --text-muted: #64748B; /* Slate 500 */
+      --border-color: #E2E8F0; /* Slate 200 */
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.025);
+      --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --radius: 12px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Reset & Styles de base */
+    /* RESET */
     * {
       box-sizing: border-box;
-    }
-    body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg-body);
-      color: var(--text-main);
-      line-height: 1.8;
-      font-weight: 400;
+      padding: 0;
+      scroll-behavior: smooth;
     }
 
-    /* Header */
-    header {
-      background: var(--primary);
-      color: #fff;
-      padding: 4rem 1rem;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-    header h1 {
-      font-size: 2.8rem;
-      margin: 0;
-      font-family: 'Merriweather', serif;
-      letter-spacing: -1px;
+
+    /* TYPOGRAPHIE */
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-heading);
     }
-    header h1 span[role="img"] {
-      font-size: 2.2rem;
-      margin-right: 10px;
+
+    a {
+      color: var(--secondary);
+      text-decoration: none;
+      transition: var(--transition);
     }
-    header p {
-      margin-top: 1rem;
-      font-size: 1.3rem;
-      color: var(--text-on-dark);
+    
+    a:hover {
+      color: var(--secondary-hover);
+    }
+
+    /* NAVBAR (Fixe et Glassmorphism) */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+    }
+
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--primary);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    nav .logo span {
+      color: var(--secondary);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: var(--text-heading);
       font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    nav ul li a:hover {
+      color: var(--secondary);
+    }
+
+    /* SECTION HERO (Accueil) */
+    header.hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero h1 span.highlight {
+      color: var(--secondary);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    /* Main Container */
+    .btn {
+      display: inline-block;
+      background: var(--secondary);
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+      transition: var(--transition);
+    }
+
+    .btn:hover {
+      background: var(--secondary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+      color: #fff;
+    }
+
+    /* CONTENEUR PRINCIPAL */
     main {
-      max-width: 950px;
-      margin: auto;
-      padding: 3rem 1.2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 20px;
     }
 
-    /* Sections / Cartes */
     section {
-      background: var(--bg-card);
-      margin-bottom: 3rem;
-      padding: 2.5rem;
-      border-radius: 12px;
-      border-left: 8px solid var(--secondary);
-      box-shadow: var(--shadow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    /* Effet au survol des sections */
-    section:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
+      margin-bottom: 6rem;
+      scroll-margin-top: 100px; /* Pour la navbar fixe */
     }
 
-    /* Titres dans les sections */
-    h2 {
-      font-family: 'Merriweather', serif;
-      font-size: 1.9rem;
-      color: var(--secondary);
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.7rem;
+    section > h2 {
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+      display: inline-block;
     }
-    h3 {
-      margin-top: 1.8rem;
-      font-size: 1.4rem;
+
+    section > h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--secondary);
+      border-radius: 2px;
+    }
+
+    /* GRILLES DE CARTES (Projets & Compétences) */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--secondary);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .card:hover::before {
+      transform: scaleY(1);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
       color: var(--primary);
+    }
+
+    .card ul {
+      list-style-type: none;
       margin-bottom: 1rem;
     }
-    h3 small {
-      font-weight: 400;
-      font-size: 0.9rem;
+
+    .card ul li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .card ul li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+      font-weight: bold;
+    }
+
+    .card-footer {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      font-weight: 600;
       color: var(--text-muted);
     }
 
-    /* Listes */
-    ul {
-      margin: 0.5rem 0 1rem 0;
-      padding-left: 1.5rem;
-    }
-    ul ul {
-      margin-top: 0.2rem;
-      margin-bottom: 0.5rem;
-    }
-    li {
-      margin-bottom: 0.6rem;
+    /* BADGES (Pour Certifs et autres) */
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    /* Liens */
-    a {
-      color: #3e5c76; /* Bleu légèrement plus vif pour les liens */
+    .badge {
+      background: #EFF6FF;
+      color: var(--secondary-hover);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
       font-weight: 600;
-      text-decoration: none;
-      transition: color 0.2s ease, border-color 0.2s ease;
-      border-bottom: 2px solid transparent;
-    }
-    a:hover {
-      color: var(--secondary);
-      border-color: var(--secondary);
+      border: 1px solid #BFDBFE;
     }
 
-    /* Textes */
-    strong {
-      color: var(--primary);
-      font-weight: 700;
-    }
-    p {
-      margin: 0.8rem 0;
-    }
-
-    /* Footer */
+    /* FOOTER */
     footer {
       background: var(--primary);
-      color: var(--text-on-dark);
+      color: #94A3B8;
       text-align: center;
-      padding: 2rem;
-      margin-top: auto;
-      font-size: 1rem;
+      padding: 3rem 20px;
+      margin-top: 4rem;
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-links a {
+      color: #fff;
       font-weight: 500;
     }
 
-    /* 📱 RESPONSIVE - Adaptations mobiles */
+    /* ANIMATIONS SCROLL (JS) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE MOBILE */
     @media (max-width: 768px) {
-      header {
-        padding: 3rem 1rem;
+      nav ul {
+        display: none; /* Cache le menu sur mobile pour faire simple */
       }
-      header h1 {
-        font-size: 2rem;
+      .hero h1 {
+        font-size: 2.5rem;
       }
-      header h1 span[role="img"] {
+      section > h2 {
         font-size: 1.8rem;
-        display: block; /* Émoji sur sa propre ligne si nécessaire */
-        margin-bottom: 5px;
-        margin-right: 0;
-      }
-      header p {
-        font-size: 1.1rem;
-      }
-      main {
-        padding: 1.5rem 1rem;
-      }
-      section {
-        padding: 1.5rem;
-        margin-bottom: 2rem;
-        border-left-width: 6px;
-      }
-      h2 {
-        font-size: 1.5rem;
-      }
-      h3 {
-        font-size: 1.2rem;
       }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1><span role="img" aria-label="ordinateur">💻</span>Portfolio – BTS SIO SISR</h1>
-  <p>Stephen Renelus – Étudiant en systèmes, réseaux & cybersécurité</p>
-</header>
-
-<main>
-  <section>
-    <p>Bienvenue sur mon portfolio GitHub !<br>
-    Je suis <strong>Stephen Renelus</strong>, étudiant en <strong>BTS SIO option SISR</strong>, passionné par les <strong>systèmes, réseaux et la cybersécurité</strong>.<br>
-    Mon objectif : devenir <strong>Administrateur Systèmes & Réseaux</strong>, capable de gérer des infrastructures Linux/Windows, sécuriser des environnements et accompagner les utilisateurs.</p>
-  </section>
-
-  <section>
-    <h2><span role="img" aria-label="cible">🎯</span>Projet Professionnel</h2>
+  <nav>
+    <div class="logo">Stephen<span>.Renelus</span></div>
     <ul>
-      <li>👨‍💻 Objectif de carrière : <strong>Administrateur Systèmes & Réseaux</strong></li>
-      <li>🛠️ Compétences clés :
-        <ul>
-          <li>Administration Linux & Windows</li>
-          <li>Configuration réseaux (TCP/IP, DHCP, DNS, Wi-Fi, Cisco)</li>
-          <li>Sécurisation des infrastructures (authentification, firewall, sauvegardes)</li>
-        </ul>
-      </li>
-      <li>📜 Certifications visées :
-        <ul>
-          <li>Cisco <strong>CCNA</strong> (prévu mai 2026)</li>
-          <li><strong>Microsoft Azure Fundamentals (AZ-900)</strong></li>
-          <li><strong>CompTIA Security+</strong></li>
-        </ul>
-      </li>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#profil">Profil</a></li>
+      <li><a href="#realisations">Réalisations</a></li>
+      <li><a href="#stage">Stage</a></li>
+      <li><a href="#annexes">Annexes</a></li>
     </ul>
-  </section>
-<section>
-  <h2><span role="img" aria-label="entreprise">🏢</span>Stage de 2ème année – Artefact BJJ</h2>
-  <p><em>Période : du 05/01/2026 au 13/02/2026</em></p>
+  </nav>
 
-  <h3>🔹 Segmentation réseau et isolation des flux (VLAN)</h3>
-  <ul>
-    <li>Analyse des besoins et création de réseaux virtuels pour isoler les flux (Administration, Logistique, Boutique).</li>
-    <li>Configuration de commutateurs <strong>Cisco/HPE</strong> : affectation des ports (Access) et agrégation de liens (Trunk 802.1Q).</li>
-    <li>Mise en place du routage inter-VLAN pour sécuriser et contrôler les échanges entre services.</li>
-    <li>🔑 Compétences : traiter des demandes concernant les services réseau, déploiement d’infrastructure, sécurité.</li>
-  </ul>
+  <header id="accueil" class="hero">
+    <div class="hero-content reveal active">
+      <h1>Futur Administrateur <br><span class="highlight">Systèmes & Réseaux</span></h1>
+      <p>Étudiant en BTS SIO option SISR, passionné par la cybersécurité, les infrastructures réseau et l'administration système.</p>
+      <a href="#realisations" class="btn">Voir mes projets</a>
+    </div>
+  </header>
 
-  <h3>🔹 Administration et sécurisation de l'annuaire (Active Directory)</h3>
-  <ul>
-    <li>Structuration de l’annuaire via des <strong>Unités d’Organisation (OU)</strong> selon la hiérarchie de l'entreprise.</li>
-    <li>Configuration et déploiement de stratégies de groupe (<strong>GPO</strong>) : mappage automatique de lecteurs réseau et règles de sécurité.</li>
-    <li>Gestion des comptes utilisateurs et des groupes de sécurité selon le principe du moindre privilège.</li>
-    <li>🔑 Compétences : mettre en place les niveaux d’habilitation, gestion du patrimoine, support utilisateur.</li>
-  </ul>
+  <main>
+    <section id="profil" class="reveal">
+      <h2>🎯 Profil & Compétences</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>👨‍💻 Objectifs</h3>
+          <p>Devenir Administrateur Systèmes & Réseaux. Gérer des infrastructures complexes, sécuriser des environnements et accompagner les utilisateurs dans leur transformation numérique.</p>
+        </div>
+        <div class="card">
+          <h3>🛠️ Compétences Techniques</h3>
+          <div class="badge-list">
+            <span class="badge">Linux / Windows Server</span>
+            <span class="badge">Active Directory & GPO</span>
+            <span class="badge">Réseaux TCP/IP & VLAN</span>
+            <span class="badge">DHCP / DNS</span>
+            <span class="badge">Cisco IOS</span>
+            <span class="badge">Cybersécurité</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>📜 Certifications Visées</h3>
+          <ul>
+            <li>Cisco <strong>CCNA</strong> (prévu mai 2026)</li>
+            <li>Microsoft <strong>Azure Fundamentals (AZ-900)</strong></li>
+            <li>CompTIA <strong>Security+</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <h3>🔹 Maintenance, support et déploiement du parc</h3>
-  <ul>
-    <li>Masterisation et déploiement de postes de travail <strong>Windows</strong> pour les nouveaux collaborateurs.</li>
-    <li>Installation et configuration de périphériques réseau (imprimantes, scanners) et agents de sauvegarde.</li>
-    <li>Support technique de proximité : diagnostic et résolution d'incidents matériels et logiciels.</li>
-    <li>🔑 Compétences : gérer le patrimoine informatique, répondre aux demandes d’assistance.</li>
-  </ul>
-</section>
-  <section>
-    <h2><span role="img" aria-label="dossier">📂</span>Réalisations professionnelles</h2>
+    <section id="realisations" class="reveal">
+      <h2>📂 Projets & Réalisations (BTS SIO)</h2>
+      <div class="grid">
+        
+        <div class="card">
+          <h3>📡 Réseau Wi-Fi sécurisé (GSB)</h3>
+          <ul>
+            <li>Installation de point d’accès D-Link DWL-3200AP.</li>
+            <li>Configuration IP (DHCP, passerelle, DNS).</li>
+            <li>Sécurisation WPA2-Personal (SSID caché).</li>
+          </ul>
+          <div class="card-footer">🔑 Déploiement réseau, Sécurité</div>
+        </div>
 
-    <h3>🔹 <a href="Documentation%20Wi-fi%20GSB.pdf">Mise en place d’un réseau Wi-Fi sécurisé (GSB)</a></h3>
-    <ul>
-      <li>Installation d’un point d’accès D-Link DWL-3200AP</li>
-      <li>Configuration IP (DHCP, passerelle, DNS)</li>
-      <li>Sécurisation WPA2-Personal (SSID <em>splink</em>)</li>
-      <li>🔑 Compétences : mise à disposition de services réseau, sécurité, diagnostic des incidents</li>
-    </ul>
+        <div class="card">
+          <h3>🖥️ Serveur Web (Wamp)</h3>
+          <ul>
+            <li>Clonage VM Windows Server 2019 & Client.</li>
+            <li>Configuration de WampServer et PhpMyAdmin.</li>
+            <li>Gestion des droits et ouverture des ports 80/443.</li>
+          </ul>
+          <div class="card-footer">🔑 Déploiement de service, Habilitations</div>
+        </div>
 
-    <h3>🔹 <a href="GSB%20Mise%20en%20place%20d'un%20serveur.pdf">Mise en place d’un serveur Web (Windows Server + Wamp + PhpMyAdmin)</a></h3>
-    <ul>
-      <li>Clonage VM Windows Server 2019 & Client Win10</li>
-      <li>Installation et configuration de <strong>WampServer</strong> et <strong>PhpMyAdmin</strong></li>
-      <li>Gestion des droits et ouverture des ports (80/443)</li>
-      <li>🔑 Compétences : déploiement de service, gestion des habilitations, support utilisateur</li>
-    </ul>
+        <div class="card">
+          <h3>🔍 DHCP & Wireshark</h3>
+          <ul>
+            <li>Mise en place serveur DHCP (baux, exclusions).</li>
+            <li>Analyse des trames Discover/Offer/Request/Ack.</li>
+            <li>Tests de continuité et adressage IP.</li>
+          </ul>
+          <div class="card-footer">🔑 Patrimoine réseau, Diagnostic</div>
+        </div>
 
-    <h3>🔹 <a href="Salle%20Formation.pdf">Configuration DHCP & Analyse réseau avec Wireshark</a></h3>
-    <ul>
-      <li>Mise en place d’un <strong>serveur DHCP</strong> avec baux, exclusions et réservations</li>
-      <li>Analyse des trames <strong>DHCP Discover / Offer / Request / Ack</strong> avec Wireshark</li>
-      <li>Vérification de la continuité du service et tests d’adressage IP</li>
-      <li>🔑 Compétences : gestion du patrimoine réseau, supervision, diagnostic d’incidents</li>
-    </ul>
-    <h3>🔹 <a href="Documentation%20Kali%20Linux.odt">Audit de sécurité et exploitation de vulnérabilités (Kali Linux)</a></h3>
-  <ul>
-    <li><strong>Reconnaissance :</strong> Utilisation de <strong>Nmap</strong> pour scanner les ports et identifier les services actifs, notamment le service FTP sur le port 21.</li>
-    <li><strong>Exploitation :</strong> Utilisation de scripts NSE (<code>ftp-vsftpd-backdoor</code>) pour exploiter une faille de type "backdoor" sur le serveur cible Metasploitable.</li>
-    <li><strong>Audit de mots de passe :</strong> Extraction des hashs (<code>/etc/shadow</code>) et utilisation de <strong>John the Ripper</strong> pour craquer les identifiants (compte <em>analyst</em> / mot de passe <em>cyberops</em>).</li>
-    <li><strong>Post-exploitation :</strong> Connexion à distance via <strong>SSH</strong> et vérification de l'identité de la machine compromise.</li>
-    <li>🔑 Compétences : Traiter des demandes concernant les services réseau et système, mettre en place les niveaux d’habilitation, gestion de la sécurité.</li>
-  </ul>
+        <div class="card">
+          <h3>🐧 Audit & Vulnérabilités (Kali)</h3>
+          <ul>
+            <li>Scan de ports et services via <strong>Nmap</strong>.</li>
+            <li>Exploitation de backdoor FTP (Metasploitable).</li>
+            <li>Craquage de mots de passe avec <strong>John the Ripper</strong>.</li>
+          </ul>
+          <div class="card-footer">🔑 Sécurité, Habilitations, Audit</div>
+        </div>
 
-  <h3>🔹 <a href="TP%20Wireshark.odt">Analyse de protocoles et diagnostic réseau (Wireshark)</a></h3>
-  <ul>
-    <li><strong>Analyse de trames :</strong> Utilisation de <strong>Wireshark</strong> pour isoler les flux ICMP, ARP et IPv4 afin de vérifier la correspondance des adresses MAC source et destination.</li>
-    <li><strong>Identification matérielle :</strong> Extraction de l'ID fournisseur (OUI IntelCore) et du numéro de série via les 12 chiffres hexadécimaux de l'adresse MAC.</li>
-    <li><strong>Audit de sécurité :</strong> Comparaison entre <strong>Telnet</strong> (données en clair) et <strong>SSH</strong> (chiffrement intégral) via l'analyse du flux TCP Stream.</li>
-    <li><strong>Analyse d'attaque :</strong> Identification d'une <strong>injection SQL</strong> entre deux hôtes pour l'usurpation d'identité et l'altération de base de données.</li>
-    <li>🔑 Compétences : Répondre aux incidents et aux demandes d'assistance, vérifier la continuité d'un service, diagnostic réseau.</li>
-  </ul>
-  </section>
+        <div class="card">
+          <h3>🦈 Analyse de Trames avancée</h3>
+          <ul>
+            <li>Analyse des flux ICMP, ARP, et IPv4.</li>
+            <li>Comparaison de sécurité entre <strong>Telnet</strong> et <strong>SSH</strong>.</li>
+            <li>Identification d'attaques par injection SQL réseau.</li>
+          </ul>
+          <div class="card-footer">🔑 Diagnostic réseau, Réponse aux incidents</div>
+        </div>
 
-  <section>
-    <h2><span role="img" aria-label="livre">📘</span>Autoformations & Certifications</h2>
-    <ul>
-      <li>✅ <em>Initiez-vous à Linux</em> (OpenClassrooms – janv. 2025)</li>
-      <li>✅ <em>Administrez un système Linux</em> (OpenClassrooms – janv. 2025)</li>
-      <li>✅ <em>Concevez votre réseau TCP/IP</em> (sept. 2024)</li>
-      <li>✅ <em>Créez votre site web en HTML5/CSS3</em> (sept. 2024)</li>
-      <li>✅ <em>Certification Cybersécurité</em> – 4 modules validés (86% à 96%)</li>
-      <li>📆 Préparation en cours : <strong>CCNA, Security+, Azure Fundamentals</strong></li>
-    </ul>
-  </section>
+      </div>
+    </section>
 
-  <section>
-    <h2><span role="img" aria-label="tableau">📊</span>Tableau de synthèse</h2>
-    <p>📄 <a href="Annexe%206-1%20Tableau.xlsx">Tableau de synthèse – Réalisations professionnelles</a><br>
-    <em>(conforme au modèle officiel de l’épreuve E4 – BTS SIO)</em></p>
-  </section>
+    <section id="stage" class="reveal">
+      <h2>🏢 Expérience en Entreprise (Stage)</h2>
+      <div class="card">
+        <h3>Stage de 2ème année – Artefact BJJ</h3>
+        <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Période : du 05/01/2026 au 13/02/2026</p>
+        <div class="grid" style="grid-template-columns: 1fr 1fr;">
+          <div>
+            <h4 style="margin-bottom: 0.5rem; color: var(--secondary);">Réseau & VLANs</h4>
+            <ul>
+              <li>Création de réseaux virtuels isolés (Admin, Boutique, Logistique).</li>
+              <li>Configuration des switchs <strong>Cisco/HPE</strong> (Access/Trunk).</li>
+              <li>Mise en place du routage inter-VLAN sécurisé.</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="margin-bottom: 0.5rem; color: var(--secondary);">Système & Active Directory</h4>
+            <ul>
+              <li>Structuration de l'annuaire via Unités d'Organisation (OU).</li>
+              <li>Déploiement de <strong>GPO</strong> (Lecteurs réseaux, sécurité MDP).</li>
+              <li>Masterisation et déploiement de postes Windows.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h2><span role="img" aria-label="planète">🌍</span>Développement professionnel & Veille</h2>
-    <ul>
-      <li>Veille technologique : Cisco, Microsoft, ZDNet, TechTarget</li>
-      <li>Expérimentations en labo virtualisé (VMs, sandbox)</li>
-      <li>Autoformation continue sur OpenClassrooms et documentation officielle</li>
-    </ul>
-  </section>
+    <section id="annexes" class="reveal">
+      <h2>📎 Documents & Annexes</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>📊 Épreuve E4 - Synthèse</h3>
+          <p style="margin-bottom: 1rem;">Tableau de synthèse officiel regroupant les compétences mises en œuvre durant la formation.</p>
+          <a href="SIO2_SISR_RENELUS_Stephen_Tableau_de_synthese_v1 (1) (2).pdf" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;" target="_blank">Consulter le Tableau</a>
+        </div>
+        <div class="card">
+          <h3>📑 Fichiers Techniques</h3>
+          <ul style="margin-top: 1rem;">
+            <li><a href="Documentation%20Wi-fi%20GSB.pdf" target="_blank">Documentation Wi-Fi GSB (PDF)</a></li>
+            <li><a href="GSB%20Mise%20en%20place%20d'un%20serveur.pdf" target="_blank">Mise en place Serveur (PDF)</a></li>
+            <li><a href="Salle%20Formation.pdf" target="_blank">TP Salle de Formation (PDF)</a></li>
+            <li><a href="Documentation%20Kali%20Linux.pdf" target="_blank">Audit Kali Linux (PDF)</a></li>
+            <li><a href="TP%20Wireshark.pdf" target="_blank">Analyse Wireshark (PDF)</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <section>
-    <h2><span role="img" aria-label="trombone">📎</span>Annexes</h2>
-    <ul>
-      <li><a href="Documentation%20Wi-fi%20GSB.pdf">Documentation Wi-Fi GSB</a></li>
-      <li><a href=""GSB%20Mise%20en%20place%20d'un%20serveur.pdf">Mise en place d’un serveur</a></li>
-      <li><a href="Salle%20Formation.pdf">Salle de formation – DHCP & Wireshark</a></li>
-      <li><a href="6-%20Annexes%206%20-%20Epreuve%20E4%20-%20BTS%20SIO%202023.docx">Annexes Épreuve E4 – BTS SIO</a></li>
-      <li><a href="Parcours-de-Certification.pptx.pdf">Parcours de Certification</a></li>
-    </ul>
-  </section>
+  </main>
 
-  <section>
-    <h2><span role="img" aria-label="silhouette">👤</span>Contact</h2>
-    <p>📧 Email : <em>stephenrenelus.45@gmail.com</em></p>
-    <p>🔗 LinkedIn : <a href="#">https://www.linkedin.com/in/stephen-renelus/</a></p>
-    <p>💼 GitHub : <a href="https://github.com/ton-profil">github.com/ton-profil</a></p>
-  </section>
-</main>
+  <footer>
+    <p><strong>Stephen Renelus</strong> © 2026 | Portfolio BTS SIO SISR</p>
+    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Développement, Systèmes, Réseaux & Cybersécurité</p>
+    <div class="social-links">
+      <a href="mailto:ton-email@example.com">Email</a>
+      <a href="#">LinkedIn</a>
+      <a href="https://pheno4-coder.github.io/Stephen.Renelus/" target="_blank">GitHub</a>
+    </div>
+  </footer>
 
-<footer>
-  © 2025 – Stephen Renelus | Portfolio BTS SIO SISR
-</footer>
+  <script>
+    function reveal() {
+      var reveals = document.querySelectorAll(".reveal");
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 100;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", reveal);
+    // Déclenche une fois au chargement
+    reveal();
+  </script>
 
 </body>
 </html>
