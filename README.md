@@ -1,7 +1,7 @@
 # 💻 Portfolio – BTS SIO SISR
 
 Bienvenue sur mon portfolio GitHub !  
-[cite_start]Je suis **Stephen Renelus**, étudiant en **BTS SIO option SISR**, passionné par les **systèmes, réseaux et la cybersécurité**[cite: 5].  
+Je suis **Stephen Renelus**, étudiant en **BTS SIO option SISR**, passionné par les **systèmes, réseaux et la cybersécurité**.  
 Mon objectif : devenir **Administrateur Systèmes & Réseaux**, capable de gérer des infrastructures Linux/Windows, sécuriser des environnements et accompagner les utilisateurs.
 
 ---
@@ -44,15 +44,15 @@ Mon objectif : devenir **Administrateur Systèmes & Réseaux**, capable de gére
 - 🔑 **Compétences** : gestion du patrimoine réseau, supervision, diagnostic d’incidents.
 
 ### 🔹 [Audit de sécurité et exploitation de vulnérabilités (Kali Linux)](Documentation%20Kali%20Linux.pdf)
-- [cite_start]**Reconnaissance** : Utilisation de **Nmap** pour scanner les ports et identifier les services (ex: FTP port 21)[cite: 17, 21].
-- [cite_start]**Exploitation** : Utilisation de scripts NSE (`ftp-vsftpd-backdoor`) sur cible Metasploitable[cite: 19, 20].
-- [cite_start]**Audit de mots de passe** : Extraction de `/etc/shadow` et craquage via **John the Ripper**[cite: 24, 25].
+- [cite_start]**Reconnaissance** : Utilisation de **Nmap** pour scanner les ports et identifier les services (ex: FTP port 21)
+- [cite_start]**Exploitation** : Utilisation de scripts NSE (`ftp-vsftpd-backdoor`) sur cible Metasploitable
+- [cite_start]**Audit de mots de passe** : Extraction de `/etc/shadow` et craquage via **John the Ripper**
 - 🔑 **Compétences** : Traiter des demandes réseau et système, mise en place d’habilitations, gestion de la sécurité.
 
 ### 🔹 [Analyse de protocoles et diagnostic réseau (Wireshark)](TP%20Wireshark.pdf)
-- [cite_start]**Analyse de trames** : Isolation des flux ICMP, ARP et IPv4 pour vérifier la correspondance des adresses MAC[cite: 31, 32].
-- [cite_start]**Audit de sécurité** : Comparaison entre Telnet (données en clair) et SSH (chiffrement) via le flux TCP Stream[cite: 45, 46].
-- [cite_start]**Analyse d'attaque** : Identification d'une **injection SQL** pour l'usurpation d'identité[cite: 47, 49].
+- [cite_start]**Analyse de trames** : Isolation des flux ICMP, ARP et IPv4 pour vérifier la correspondance des adresses MAC
+- [cite_start]**Audit de sécurité** : Comparaison entre Telnet (données en clair) et SSH (chiffrement) via le flux TCP Stream
+- [cite_start]**Analyse d'attaque** : Identification d'une **injection SQL** pour l'usurpation d'identité.
 - 🔑 **Compétences** : Répondre aux incidents, vérifier la continuité d'un service, diagnostic réseau.
 
 ---
@@ -61,17 +61,16 @@ Mon objectif : devenir **Administrateur Systèmes & Réseaux**, capable de gére
 
 ## 📊 Tableau de synthèse
 📄 [Tableau de synthèse – Réalisations professionnelles](SIO2_SISR_RENELUS_Stephen_Tableau_de_synthese_v1%20(1)%20(2).pdf)  
-[cite_start]*(Conforme au modèle officiel de l’épreuve E4 – BTS SIO)* [cite: 3, 4]
-
+[cite_start]*(Conforme au modèle officiel de l’épreuve E4 – BTS SIO)* 
 ---
 
 ## 📎 Annexes
 - [📡 Borne Wifi – Installation et configuration (PDF)](Borne_Wifi.pdf)
 - [🏫 Salle de formation – DHCP et réseau (PDF)](Salle%20Formation.pdf)
 - [🖥️ GSB – Serveur Web (PDF)](GSB%20Mise%20en%20place%20d'un%20serveur.pdf)
-- [cite_start][🐧 Documentation Kali Linux (PDF)](Documentation%20Kali%20Linux.pdf) [cite: 11]
-- [cite_start][🔍 TP Wireshark (PDF)](TP%20Wireshark.pdf) [cite: 29]
+- [cite_start][🐧 Documentation Kali Linux (PDF)](Documentation%20Kali%20Linux.pdf) 
+- [cite_start][🔍 TP Wireshark (PDF)](TP%20Wireshark.pdf) 
 
 ---
 
-[cite_start]👤 **Contact** 📧 Email : *(à ajouter)* 💼 GitHub : [pheno4-coder.github.io/Stephen.Renelus/](https://pheno4-coder.github.io/Stephen.Renelus/) [cite: 5]
+[cite_start]👤 **Contact** 📧 Email : *stephenrenelus.45@gmail.com* 💼 GitHub : [pheno4-coder.github.io/Stephen.Renelus/](https://pheno4-coder.github.io/Stephen.Renelus/) [cite: 5]
