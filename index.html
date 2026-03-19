@@ -3,300 +3,382 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio – Stephen RENELUS</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <title>Portfolio – Stephen Renelus | SIO SISR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* Variables de couleurs */
+    /* VARIABLES DE COULEURS - Thème moderne Tech */
     :root {
-      --primary: #0d1b2a;
-      --secondary: #1b263b;
-      --accent: #e0e1dd;
-      --bg-body: #f0f2f5;
-      --bg-card: #ffffff;
-      --text-main: #222222;
-      --text-muted: #666666;
-      --text-on-dark: #d1d1d1;
-      --shadow: 0 4px 15px rgba(0,0,0,0.08);
-      --shadow-hover: 0 10px 30px rgba(0,0,0,0.12);
+      --primary: #0F172A; /* Slate 900 */
+      --secondary: #3B82F6; /* Blue 500 */
+      --secondary-hover: #2563EB; /* Blue 600 */
+      --bg-body: #F8FAFC; /* Slate 50 */
+      --bg-card: #FFFFFF;
+      --text-main: #334155; /* Slate 700 */
+      --text-heading: #0F172A; /* Slate 900 */
+      --text-muted: #64748B; /* Slate 500 */
+      --border-color: #E2E8F0; /* Slate 200 */
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.025);
+      --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --radius: 12px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Reset & Styles de base */
-    * { box-sizing: border-box; }
+    /* RESET */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      background: var(--bg-body);
+      background-color: var(--bg-body);
       color: var(--text-main);
-      line-height: 1.8;
-      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    /* Header */
-    header {
-      background: var(--primary);
-      color: #fff;
-      padding: 4rem 1rem;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    header h1 {
-      font-size: 2.8rem;
-      margin: 0;
-      font-family: 'Merriweather', serif;
-      letter-spacing: -1px;
-    }
-    header h1 span[role="img"] { margin-right: 10px; }
-    header p {
-      margin-top: 1rem;
-      font-size: 1.3rem;
-      color: var(--text-on-dark);
-      font-weight: 500;
+    /* TYPOGRAPHIE */
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-heading);
     }
 
-    /* Main Container */
-    main {
-      max-width: 950px;
-      margin: auto;
-      padding: 3rem 1.2rem;
-    }
-
-    /* Sections principales */
-    section {
-      background: var(--bg-card);
-      margin-bottom: 3rem;
-      padding: 2.5rem;
-      border-radius: 12px;
-      border-left: 8px solid var(--secondary);
-      box-shadow: var(--shadow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    section:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    /* Titres */
-    h2 {
-      font-family: 'Merriweather', serif;
-      font-size: 1.9rem;
+    a {
       color: var(--secondary);
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.7rem;
+      text-decoration: none;
+      transition: var(--transition);
     }
-    h3 {
-      margin-top: 1.8rem;
-      font-size: 1.4rem;
+    
+    a:hover {
+      color: var(--secondary-hover);
+    }
+
+    /* NAVBAR (Fixe et Glassmorphism) */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+    }
+
+    nav .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
       color: var(--primary);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    nav .logo span {
+      color: var(--secondary);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: var(--text-heading);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    nav ul li a:hover {
+      color: var(--secondary);
+    }
+
+    /* SECTION HERO (Accueil) */
+    header.hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero h1 span.highlight {
+      color: var(--secondary);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--secondary);
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+      transition: var(--transition);
+    }
+
+    .btn:hover {
+      background: var(--secondary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+      color: #fff;
+    }
+
+    /* CONTENEUR PRINCIPAL */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 20px;
+    }
+
+    section {
+      margin-bottom: 6rem;
+      scroll-margin-top: 100px; /* Pour la navbar fixe */
+    }
+
+    section > h2 {
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    section > h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--secondary);
+      border-radius: 2px;
+    }
+
+    /* GRILLES DE CARTES (Projets & Compétences) */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--secondary);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .card:hover::before {
+      transform: scaleY(1);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .card ul {
+      list-style-type: none;
       margin-bottom: 1rem;
     }
 
-    /* Listes & Liens */
-    ul { margin: 0.5rem 0 1rem 0; padding-left: 1.5rem; }
-    li { margin-bottom: 0.6rem; }
-    a {
-      color: #3e5c76;
-      font-weight: 600;
-      text-decoration: none;
-      transition: color 0.2s ease;
-      border-bottom: 2px solid transparent;
+    .card ul li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
     }
-    a:hover { color: var(--secondary); border-color: var(--secondary); }
-    strong { color: var(--primary); font-weight: 700; }
 
-    /* CSS POUR LA GRILLE DE VEILLE TECHNOLOGIQUE */
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    .card ul li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+      font-weight: bold;
+    }
+
+    .card-footer {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* BADGES (Pour Certifs et autres) */
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .badge {
+      background: #EFF6FF;
+      color: var(--secondary-hover);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid #BFDBFE;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--primary);
+      color: #94A3B8;
+      text-align: center;
+      padding: 3rem 20px;
+      margin-top: 4rem;
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
       gap: 1.5rem;
       margin-top: 1.5rem;
     }
-    .veille-card {
-      background: var(--bg-body);
-      padding: 1.5rem;
-      border-radius: 8px;
-      border-top: 4px solid #3e5c76;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .veille-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      border-top-color: var(--primary);
-    }
-    .veille-card h3 {
-      margin-top: 0;
-      font-size: 1.1rem;
-      line-height: 1.4;
-      margin-bottom: 0.5rem;
-    }
-    .veille-card .meta {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 0.8rem;
-      display: block;
-    }
-    .veille-card p {
-      font-size: 0.95rem;
-      margin: 0;
-      line-height: 1.5;
+
+    .social-links a {
+      color: #fff;
+      font-weight: 500;
     }
 
-    /* Footer */
-    footer {
-      background: var(--primary);
-      color: var(--text-on-dark);
-      text-align: center;
-      padding: 2rem;
-      margin-top: auto;
+    /* ANIMATIONS SCROLL (JS) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
     }
 
-    /* Responsive Mobile */
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE MOBILE */
     @media (max-width: 768px) {
-      header { padding: 3rem 1rem; }
-      header h1 { font-size: 2rem; }
-      section { padding: 1.5rem; border-left-width: 6px; }
-      .articles-grid { grid-template-columns: 1fr; }
+      nav ul {
+        display: none; /* Cache le menu sur mobile pour faire simple */
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      section > h2 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1><span role="img" aria-label="ordinateur">💻</span>Portfolio – BTS SIO SISR</h1>
-  <p>Stephen Renelus – Étudiant en systèmes, réseaux & cybersécurité</p>
-</header>
-
-<main>
-  <section>
-    <p>Bienvenue sur mon portfolio GitHub !<br>
-    Je suis <strong>Stephen Renelus</strong>, étudiant en <strong>BTS SIO option SISR</strong>, passionné par les <strong>systèmes, réseaux et la cybersécurité</strong>.<br>
-    Mon objectif : devenir <strong>Administrateur Systèmes & Réseaux</strong>, capable de gérer des infrastructures Linux/Windows, sécuriser des environnements et accompagner les utilisateurs.</p>
-  </section>
-
-  <section>
-    <h2><span role="img" aria-label="cible">🎯</span>Projet Professionnel</h2>
+  <nav>
+    <div class="logo">Stephen<span> RENELUS</span></div>
     <ul>
-      <li>👨‍💻 Objectif de carrière : <strong>Administrateur Systèmes & Réseaux</strong></li>
-      <li>🛠️ Compétences clés :
-        <ul>
-          <li>Administration Linux & Windows</li>
-          <li>Configuration réseaux (TCP/IP, DHCP, DNS, Wi-Fi, Cisco)</li>
-          <li>Sécurisation des infrastructures (authentification, firewall, sauvegardes)</li>
-        </ul>
-      </li>
-      <li>📜 Certifications visées :
-        <ul>
-          <li>Cisco <strong>CCNA</strong> (prévu mai 2026)</li>
-          <li><strong>Microsoft Azure Fundamentals (AZ-900)</strong></li>
-          <li><strong>CompTIA Security+</strong></li>
-        </ul>
-      </li>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#profil">Profil</a></li>
+      <li><a href="#realisations">Réalisations</a></li>
+      <li><a href="#stage">Stage</a></li>
+      <li><a href="#veille">Veille</a></li>
+      <li><a href="#annexes">Annexes</a></li>
     </ul>
-  </section>
+  </nav>
 
-  <section>
-    <h2><span role="img" aria-label="dossier">📂</span>Réalisations professionnelles</h2>
-
-    <h3>🔹 <a href="doc_wifi_gsb.pdf" target="_blank">Mise en place d’un réseau Wi-Fi sécurisé (GSB)</a></h3>
-    <ul>
-      <li>Installation d’un point d’accès D-Link DWL-3200AP</li>
-      <li>Configuration IP (DHCP, passerelle, DNS)</li>
-      <li>Sécurisation WPA2-Personal (SSID <em>splink</em>)</li>
-      <li>🔑 Compétences : mise à disposition de services réseau, sécurité, diagnostic d'incidents</li>
-    </ul>
-
-    <h3>🔹 <a href="doc_serveur_gsb.pdf" target="_blank">Mise en place d’un serveur Web (Windows Server)</a></h3>
-    <ul>
-      <li>Clonage VM Windows Server 2019 & Client Win10</li>
-      <li>Installation et configuration de <strong>WampServer</strong> et <strong>PhpMyAdmin</strong></li>
-      <li>Gestion des droits et ouverture des ports (80/443)</li>
-      <li>🔑 Compétences : déploiement de service, gestion des habilitations, support</li>
-    </ul>
-
-    <h3>🔹 <a href="doc_dhcp_wireshark.pdf" target="_blank">Configuration DHCP & Analyse avec Wireshark</a></h3>
-    <ul>
-      <li>Mise en place d’un <strong>serveur DHCP</strong> avec baux, exclusions et réservations</li>
-      <li>Analyse des trames <strong>DHCP DORA</strong> avec Wireshark</li>
-      <li>Vérification de la continuité du service et tests d’adressage IP</li>
-      <li>🔑 Compétences : gestion du patrimoine réseau, supervision, diagnostic</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2><span role="img" aria-label="livre">📘</span>Autoformations & Certifications</h2>
-    <ul>
-      <li>✅ <em>Initiez-vous à Linux</em> & <em>Administrez un système Linux</em> (OpenClassrooms – janv. 2025)</li>
-      <li>✅ <em>Concevez votre réseau TCP/IP</em> & <em>Créez votre site web</em> (sept. 2024)</li>
-      <li>✅ <em>Certification Cybersécurité</em> – 4 modules validés (86% à 96%)</li>
-      <li>📆 Préparation en cours : <strong>CCNA, Security+, Azure Fundamentals</strong></li>
-    </ul>
-  </section>
-
-  <section id="veille">
-    <h2><span role="img" aria-label="journal">📰</span>Veille Technologique (Oct 2025 - Mar 2026)</h2>
-    <p>Suivi de l'actualité technique axé sur les <strong>infrastructures réseaux</strong> et les <strong>menaces de cybersécurité</strong>, à travers des sources spécialisées comme <em>Developpez.com</em> et <em>ZDNet</em>.</p>
-    
-    <div class="articles-grid">
-      <article class="veille-card">
-        <h3>L'alliance inattendue d'AWS et Google Cloud</h3>
-        <span class="meta">📅 Décembre 2025 | 🌐 Cloud & Résilience</span>
-        <p>Création d'un service réseau multicloud permettant de basculer d'un environnement à l'autre pour pallier les pannes mondiales (SPOF).</p>
-      </article>
-
-      <article class="veille-card">
-        <h3>La panne historique d'Amazon AWS</h3>
-        <span class="meta">📅 Octobre 2025 | 🌐 Réseaux & DNS</span>
-        <p>Une défaillance DNS localisée provoque 16h de panne mondiale, illustrant les dangers de la centralisation excessive des infrastructures.</p>
-      </article>
-
-      <article class="veille-card">
-        <h3>Vulnérabilité critique "MongoBleed"</h3>
-        <span class="meta">📅 Décembre 2025 | 🛡️ Cybersécurité</span>
-        <p>Une faille expose plus de 80 000 serveurs MongoDB publics (fuite de mémoire), soulignant l'importance du patch management.</p>
-      </article>
-
-      <article class="veille-card">
-        <h3>Le Bloc-notes Windows 11 compromis</h3>
-        <span class="meta">📅 Février 2026 | 🛡️ Vulnérabilités OS</span>
-        <p>L'ajout du support Markdown crée une faille permettant l'exécution de code à distance via de simples fichiers textes.</p>
-      </article>
-
-      <article class="veille-card">
-        <h3>L'Iran cible les géants de la Tech</h3>
-        <span class="meta">📅 Mars 2026 | 🛡️ Géopolitique & Cyber</span>
-        <p>Google et Microsoft désignés comme cibles potentielles par des acteurs étatiques, menaçant les infrastructures critiques.</p>
-      </article>
-
-      <article class="veille-card">
-        <h3>Le marché de la sécurité dopé par l'IA</h3>
-        <span class="meta">📅 Mars 2026 | 📈 Stratégie IT</span>
-        <p>Les dépenses en cybersécurité dépassent les 300 milliards $ en 2026, tirées par l'automatisation des menaces et des défenses (IA).</p>
-      </article>
+  <header id="accueil" class="hero">
+    <div class="hero-content reveal active">
+      <h1>Futur Administrateur <br><span class="highlight">Systèmes & Réseaux</span></h1>
+      <p>Étudiant en BTS SIO option SISR, passionné par la cybersécurité, les infrastructures réseau et l'administration système.</p>
+      <a href="#realisations" class="btn">Voir mes projets</a>
     </div>
-  </section>
+  </header>
 
-  <section>
-    <h2><span role="img" aria-label="trombone">📎</span>Annexes & Documents utiles</h2>
-    <ul>
-      <li><a href="tableau_synthese.xlsx" target="_blank">Tableau de synthèse des réalisations (E4)</a></li>
-      <li><a href="annexes_e4.pdf" target="_blank">Annexes officielles Épreuve E4</a></li>
-      <li><a href="parcours_certification.pdf" target="_blank">Mon parcours de Certification détaillé</a></li>
-    </ul>
-  </section>
-
-  <section>
-    <h2><span role="img" aria-label="silhouette">👤</span>Contact</h2>
-    <p>📧 Email : <em>[Insérer votre email]</em></p>
-    <p>🔗 LinkedIn : <a href="#">https://www.linkedin.com/in/stephen-renelus/</a></p>
-    <p>💼 GitHub : <a href="https://github.com/pheno4-coder/Stephen.Renelus">github.com/ton-profil</a></p>
-  </section>
-</main>
-
-<footer>
-  © 2026 – Stephen Renelus | Portfolio BTS SIO SISR
-</footer>
-
-</body>
-</html>
+  <main>
+    <section id="profil" class="reveal">
+      <h2>🎯 Profil & Compétences</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>👨‍💻 Objectifs</h3>
+          <p>Devenir Administrateur Systèmes & Réseaux. Gérer des infrastructures complexes, sécuriser des environnements et accompagner les utilisateurs dans leur transformation numérique.</p>
+        </div>
+        <div class="card">
+          <h3>🛠️ Compétences Techniques</h3>
+          <div class="badge-list">
+            <span class="badge">Linux / Windows Server</span>
+            <span class="badge">Active Directory & GPO</span>
+            <span class="badge">Réseaux TCP/IP & VLAN</span>
+            <span class="badge">DHCP / DNS</span>
+            <span class="badge">Cisco IOS</span>
+            <span class="badge">Cybersécurité</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>📜 Certifications Visées</h3>
+          <ul>
+            <li>Cisco <strong>CCNA</strong> (prévu mai 2026)</li>
+            <li>Microsoft <strong>Azure Fundamentals (AZ-900)</strong></li>
+            <li>CompTIA <strong>Security+</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
