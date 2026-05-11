@@ -113,6 +113,24 @@
     .badge-list { display: flex; flex-wrap: wrap; gap: 10px; }
     .badge { background: #EFF6FF; color: var(--secondary-hover); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.9rem; font-weight: 600; border: 1px solid #BFDBFE; }
 
+    /* TIMELINE */
+    .timeline { position: relative; margin-top: 1.5rem; padding-left: 2.5rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0.85rem; top: 0; bottom: 0; width: 2px;
+      background: var(--border-color);
+    }
+    .timeline-item { position: relative; margin-bottom: 2rem; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-item::before {
+      content: attr(data-step); position: absolute; left: -2.55rem; top: -0.1rem; width: 1.8rem; height: 1.8rem;
+      background: var(--bg-card); border: 2px solid var(--secondary); border-radius: 50%;
+      z-index: 1; display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: bold; color: var(--secondary); font-family: 'Poppins', sans-serif;
+    }
+    .timeline-item h4 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.25rem; font-family: 'Inter', sans-serif; font-weight: 600; }
+    .timeline-item p.date { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; margin-bottom: 0.5rem; }
+    .timeline-item ul { margin-top: 0.5rem; margin-bottom: 0; }
+
     /* FOOTER */
     footer { background: var(--primary); color: #94A3B8; text-align: center; padding: 3rem 20px; margin-top: 4rem; }
     footer p { margin-bottom: 0.5rem; }
@@ -180,6 +198,39 @@
             <li>Microsoft <strong>Azure Fundamentals (AZ-900)</strong></li>
             <li>CompTIA <strong>Security+</strong></li>
           </ul>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 2rem;">
+        <h3>🎓 Certifications Obtenues</h3>
+        <p style="margin-bottom: 1.5rem; color: var(--text-muted);">J'ai déjà suivi plusieurs formations et obtenu les certifications suivantes :</p>
+        
+        <div class="timeline">
+          <div class="timeline-item" data-step="1">
+            <h4>Systèmes & Réseaux : Administrez un système Linux</h4>
+            <p class="date">Cours terminé le 21 janvier 2025</p>
+          </div>
+          <div class="timeline-item" data-step="2">
+            <h4>Systèmes & Réseaux : Initiez-vous à Linux</h4>
+            <p class="date">Cours terminé le 7 janvier 2025</p>
+          </div>
+          <div class="timeline-item" data-step="3">
+            <h4>Développement : Créez votre site web avec HTML5 et CSS3</h4>
+            <p class="date">Cours terminé le 10 septembre 2024</p>
+          </div>
+          <div class="timeline-item" data-step="4">
+            <h4>Systèmes & Réseaux : Concevez votre réseau TCP/IP</h4>
+            <p class="date">Cours terminé</p>
+          </div>
+          <div class="timeline-item" data-step="5">
+            <h4>Cybersécurité : Certification Cybersécurité</h4>
+            <ul>
+              <li>Module 1 : Panorama de la SSI (Score : 88%)</li>
+              <li>Module 2 : Sécurité de l'authentification (Score : 90%)</li>
+              <li>Module 3 : Sécurité sur Internet (Score : 96%)</li>
+              <li>Module 4 : Sécurité du poste de travail et nomadisme (Score : 86%)</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
