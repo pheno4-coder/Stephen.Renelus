@@ -13,7 +13,7 @@ Mon objectif : devenir **Administrateur Systèmes & Réseaux**, capable de gére
   - Configuration réseaux (TCP/IP, DHCP, DNS, Wi-Fi, Cisco)
   - Sécurisation des infrastructures (authentification, firewall, sauvegardes)
 - 📜 Certifications visées :
-  - Cisco **CCNA** (prévu mai 2026)
+  - Cisco **CCNA**
   - **Microsoft Azure Fundamentals (AZ-900)**
   - **CompTIA Security+**
 
